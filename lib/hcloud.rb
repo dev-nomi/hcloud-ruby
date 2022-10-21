@@ -47,6 +47,9 @@ module Hcloud
 
   autoload :Pagination, 'hcloud/pagination'
 
+  autoload :Firewall, 'hcloud/firewall'
+  autoload :FirewallResource, 'hcloud/firewall_resource'
+
   COLLECT_ARGS = proc do |method_name, bind|
     query = bind.receiver.method(method_name).parameters.inject({}) do |hash, (_type, name)|
       hash.merge(name => bind.local_variable_get(name))

@@ -98,6 +98,10 @@ module Hcloud
       VolumeResource.new(client: self)
     end
 
+    def firewalls
+      FirewallResource.new(client: self)
+    end
+
     class ResourceFuture < Delegator
       def initialize(request) # rubocop:disable Lint/MissingSuper
         @request = request
